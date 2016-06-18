@@ -6,16 +6,38 @@
             modifier="tappable" class="list__item__line-height"
             onclick="app.slidingMenu.setMainPage('top.html', {closeMenu: true})">
             <i class="fa fa-home fa-lg" style="color: #666"></i>
-            &nbsp; Top Page
+            &nbsp;<span class="top_page">Top Page</span>
         </ons-list-item>
 
         <ons-list-item
             modifier="tappable" class="list__item__line-height"
-            onclick="app.slidingMenu.setMainPage('page2.html', {closeMenu: true})">
-            <i class="fa fa-gear fa-lg" style="color: #666"></i>
-            &nbsp; Page 2
+            onclick="app.slidingMenu.setMainPage('camera.html', {closeMenu: true})">
+            <i class="fa fa-camera-retro fa-lg" style="color: #666"></i>
+            &nbsp;<span class="camera">Camera</span>
         </ons-list-item>
 
+        <ons-list-item
+            modifier="tappable" class="list__item__line-height"
+            onclick="app.slidingMenu.setMainPage('setting.html', {closeMenu: true})">
+            <i class="fa fa-gear fa-lg" style="color: #666"></i>
+            &nbsp;<span class="setting">Setting</span>
+        </ons-list-item>
+        
+        
+        <ons-list-item
+            modifier="tappable" class="list__item__line-height"
+            onclick="app.slidingMenu.setMainPage('photo.html', {closeMenu: true})">
+            <i class="fa fa-file-image-o fa-lg" style="color: #666"></i>
+            &nbsp;<span class="photo">Select Photo</span>
+        </ons-list-item>
+        
+        <ons-list-item
+            modifier="tappable" class="list__item__line-height"
+            onclick="app.slidingMenu.setMainPage('result.html', {closeMenu: true})">
+            <i class="fa fa-file-o fa-lg" style="color: #666"></i>
+            &nbsp;<span class="result">Result</span>
+        </ons-list-item>
+        
     </ons-list>
 
 </ons-page>
