@@ -1,4 +1,4 @@
-<ons-page style="background-color: white">
+<ons-page ng-controller="menu_controller" style="background-color: white">
 
     <ons-list>
 
@@ -15,14 +15,6 @@
             <i class="fa fa-camera-retro fa-lg" style="color: #666"></i>
             &nbsp;<span class="camera">Camera</span>
         </ons-list-item>
-
-        <ons-list-item
-            modifier="tappable" class="list__item__line-height"
-            onclick="app.slidingMenu.setMainPage('setting.html', {closeMenu: true})">
-            <i class="fa fa-gear fa-lg" style="color: #666"></i>
-            &nbsp;<span class="setting">Setting</span>
-        </ons-list-item>
-        
         
         <ons-list-item
             modifier="tappable" class="list__item__line-height"
@@ -38,6 +30,12 @@
             &nbsp;<span class="result">Result</span>
         </ons-list-item>
         
+        <ons-list-item
+            modifier="tappable" class="list__item__line-height"
+            onclick="app.slidingMenu.setMainPage('setting.html', {closeMenu: true})">
+            <i class="fa fa-gear fa-lg" style="color: #666"></i>
+            &nbsp;<span class="setting">Setting</span>
+        </ons-list-item>
     </ons-list>
 
 </ons-page>

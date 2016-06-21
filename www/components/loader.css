@@ -28,3 +28,15 @@
 @import url("monaca-onsenui/css/onsen-css-components-blue-basic-theme.css");
 /*** <End:monaca-onsenui LoadCss:"components/monaca-onsenui/css/onsen-css-components-blue-basic-theme.css"> ***/
 /*** <End:monaca-onsenui> ***/
+
+/*** <Start:monaca-jquery-mobile> ***/
+/*** <Start:monaca-jquery-mobile LoadCss:"components/monaca-jquery-mobile/css/jquery.mobile.css"> ***/
+@import url("monaca-jquery-mobile/css/jquery.mobile.css");
+/*** <End:monaca-jquery-mobile LoadCss:"components/monaca-jquery-mobile/css/jquery.mobile.css"> ***/
+/*** <Start:monaca-jquery-mobile LoadCss:"components/monaca-jquery-mobile/css/jquery.mobile.structure.css"> ***/
+@import url("monaca-jquery-mobile/css/jquery.mobile.structure.css");
+/*** <End:monaca-jquery-mobile LoadCss:"components/monaca-jquery-mobile/css/jquery.mobile.structure.css"> ***/
+/*** <Start:monaca-jquery-mobile LoadCss:"components/monaca-jquery-mobile/css/jquery.mobile.theme.css"> ***/
+@import url("monaca-jquery-mobile/css/jquery.mobile.theme.css");
+/*** <End:monaca-jquery-mobile LoadCss:"components/monaca-jquery-mobile/css/jquery.mobile.theme.css"> ***/
+/*** <End:monaca-jquery-mobile> ***/

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <jp>
+        <top_page>トップページ</top_page>
+        <camera>カメラ</camera>
+        <photo>写真</photo>
+        <result>結果</result>
+        <setting>設定</setting>
+    </jp>
+    <en>
+        <top_page>Top page</top_page>
+        <camera>Camera</camera></camera>
+        <photo>Photo</photo>
+        <result>Result</result>
+        <setting>Setting</setting>
+    </en>
+    
+    
+    
+</root>
