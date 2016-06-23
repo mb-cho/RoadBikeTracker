@@ -6,6 +6,8 @@
         <photo>写真</photo>
         <result>結果</result>
         <setting>設定</setting>
+        <cmd_trans>タップで翻訳</cmd_trans>
+        <menu>メニュー</menu>
     </jp>
     <en>
         <top_page>Top page</top_page>
@@ -13,6 +15,8 @@
         <photo>Photo</photo>
         <result>Result</result>
         <setting>Setting</setting>
+        <cmd_trans>Trans by tap</cmd_trans>
+        <menu>Menu</menu>
     </en>
     
     

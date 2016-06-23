@@ -16,7 +16,9 @@
     <script src="components/https.js"></script>
     
     <link rel="stylesheet" href="components/loader.css">
-    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="css/camera.css">
+    
     <script>
         
     //以下の obj は vote.js $(document).ready で設定される
@@ -26,6 +28,12 @@
     var module = ons.bootstrap('my-app', ['onsen']); 
     
     module.controller('menu_controller', function($scope) {
+        ons.ready(function() {
+            class_text();
+        });
+    });
+    
+    module.controller('camera__controller', function($scope) {
         ons.ready(function() {
             class_text();
         });
