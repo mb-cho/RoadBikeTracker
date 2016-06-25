@@ -31,32 +31,63 @@ $(document).on('pageinit','#camera-page',function(){
     document.addEventListener ("deviceready", onDeviceReady, false);
     //This function is executed when PhoneGap loading completed.
     function onDeviceReady () {
+        //window.alert ('Loading PhoneGap is completed、Camera is now ready to be used.');
         console.log('Loading PhoneGap is completed、Camera is now ready to be used.');
+        
         $('.cmd_trans').css('display', 'none');
-    
-        var options = {
-            quality: 50, 
-            sourceType: Camera.PictureSourceType.CAMERA,   // 撮影モード
-            saveToPhotoAlbum: true   // 撮影後、写真を端末に保存
-        };
-          
-        // カメラを起動
-        navigator.camera.getPicture(onSuccess, onError, options);
-
-        // 撮影完了したときに呼び出される
-        function onSuccess(imageURI){
-            console.log(imageURI);
+        /*
+        navigator.camera.getPicture (onSuccess, onFail, 
+            {   quality: 50, 
+                destinationType: 
+                Camera.DestinationType.DATA_URL});
+        */
+        /*
+        navigator.camera.getPicture (onSuccess, onFail, 
+            {   quality: 50, 
+                sourceType:Camera.PictureSourceType.CAMERA,
+                saveToPhotoAlbum:true,
+                correctOrientation:true,
+                destinationType:Camera.DestinationType.FILE_URI
+            });
+        */        
+        navigator.camera.getPicture (onSuccess, onFail, 
+            { 
+                sourceType: Camera.PictureSourceType.CAMERA,   // 撮影モード
+                saveToPhotoAlbum: true   // 撮影後、写真を端末に保存
+            });
+        //A callback function when snapping picture is success.
+        function onSuccess (imageData) {
+            console.log('camera onSuccess');  
             var image = document.getElementById ('picture');
-            image.src = imageURI;
+            image.src = "data:image/jpeg;base64," + imageData;
             $('.cmd_trans').css('display', 'block');
         }
-        // 撮影キャンセルしたときに呼び出される
-        function onError(message){
-            alert("エラー: " + message);
-        }
-        
+
+        //A callback function when snapping picture is fail.
+        function onFail (message) {
+            $('.cmd_trans').css('display', 'none');
+            alert ('Error occured: ' + message);
+        } 
     }
     
+    /*
+    var getPictureFromCamera= function(onSuccess){
+        var options = {
+            sourceType : Camera.PictureSourceType.CAMERA,
+            saveToPhotoAlbum:true,
+            correctOrientation:true,
+            destinationType: Camera.DestinationType.FILE_URI
+        };
+        navigator.camera.getPicture(function(imageURI){
+            onSuccess(imageURI);
+        },onFail,options)
+    }
+    
+    function onFail (message) {
+        $('.cmd_trans').css('display', 'none');
+        alert ('Error occured: ' + message);
+    } 
+    */
     $('#picture').click(function(){
         alert('hit pic');   
     });
