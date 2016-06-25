@@ -1,6 +1,7 @@
 /**/
-
+/*
 div.img_size{ width: 90%; margin-left:5%;}
+*/
 div.img_size img{ width: 100%; }
 
-.cmd_trans{ display: none;}
+.cmd_trans{ width: 100%; margin-left:5%;display: none;}

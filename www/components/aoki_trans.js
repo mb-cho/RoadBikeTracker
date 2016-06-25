@@ -18,7 +18,33 @@ function class_text(){
                 });
             },
             error:function() {
-                console.log('xml load error')
+                console.log('class_value.xml load error')
+            }
+        });
+}
+
+//data/lang.xml から    Target Language を読み込む
+function set_to_lang(){
+    
+    var lang = 'jp';//ここで言語を設定する
+    
+        $.support.cors = true;
+                                 
+        $.ajax({
+            url:'data/lang.xml',
+            timeout:1000,
+            success:function(xml){
+                $(xml).find(lang).each(function() {
+                    
+                    /*
+                    ここで target_langにitemを追加する
+                    
+                    */
+                    
+                });
+            },
+            error:function() {
+                console.log('lang.xml load error')
             }
         });
 }
@@ -37,7 +63,8 @@ $(document).on('pageinit','#camera-page',function(){
         var options = {
             quality: 50, 
             sourceType: Camera.PictureSourceType.CAMERA,   // 撮影モード
-            saveToPhotoAlbum: true   // 撮影後、写真を端末に保存
+            saveToPhotoAlbum: true,  // 撮影後、写真を端末に保存
+            destinationType:Camera.DestinationType.FILE_URI
         };
           
         // カメラを起動
@@ -62,6 +89,56 @@ $(document).on('pageinit','#camera-page',function(){
     });
     
 
+});
+
+
+//photo
+$(document).on('pageinit','#photo-page',function(){
+    
+    document.addEventListener("deviceready", onDeviceReady, false);
+    
+    $('.cmd_trans').css('display', 'none');
+    
+    function onDeviceReady () {
+        console.log ('Loading PhoneGap is completed');
+        getPhoto();
+    }
+    
+    function onSuccess (imageURI) {
+        var largeImage = document.getElementById ('picture');
+        largeImage.style.display = 'block';
+        largeImage.src = imageURI;
+        $('.cmd_trans').css('display', 'block');
+    }
+    
+    function getPhoto () {
+    //Specify the source to get the photos.
+    navigator.camera.getPicture(onSuccess, onFail, 
+      { quality: 50,destinationType: Camera.DestinationType.FILE_URI,
+      sourceType: navigator.camera.PictureSourceType.SAVEDPHOTOALBUM });
+    }
+    
+    function onFail (message) {
+      alert('An error occured: ' + message);
+    }
+    
+    $('#picture').click(function(){
+        alert('hit pic');   
+    });
+    
+});
+
+$(document).on('pageinit','#setting-page',function(){
+    /*
+    ons.createPopover('setting.html').then(function(popover) {
+        $scope.popover = popover;
+    });
+    
+    $scope.show = function(e) {
+        $scope.popover.show(e);
+    };
+    */
+    
 });
 
 $(document).on('pageinit','#result-page',function(){

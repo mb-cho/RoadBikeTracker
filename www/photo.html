@@ -1,17 +1,25 @@
 
 <ons-navigator>
-    <ons-page ng-controller="photo__controller" style="background-color: white">
+    <ons-page ng-controller="photo__controller" 
+        style="background-color: white"
+        id="photo-page">
     
-        <ons-toolbar>
-            <div class="left">
-                <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars"></ons-icon></ons-toolbar-button>
-            </div>
-            <div class="center"><span class="photo">Select Photo</span></div>
-        </ons-toolbar>
-    
-        <div style="text-align: center">
-            <h1><span class="photo">Select Photo</span></h1>
+    <ons-toolbar>
+        <div class="left">
+            <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()">
+            <ons-icon icon="bars"></ons-icon></ons-toolbar-button>
+            <ons-button class="cmd_trans">Trans By Tap Image</ons-button>
+        </div>       
+        <div class="center">
+            <span class="photo">Photo</span>
         </div>
+
+    </ons-toolbar>
     
+    <div class="img_size">
+        <img id="picture" src="">
+    </div>
+        
     </ons-page>
+    
 </ons-navigator>
