@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-    <jp>
-        <value>日本語</value>
-    </jp>
-    <en>
-        <value>English</value></value>
-    </en>
-    
-    
-    
+    <item>
+        <value>ja</value>
+        <text>日本語</text>
+    </item>
+    <item>
+        <value>en</value>
+        <text>English</text>
+    </item>
 </root>

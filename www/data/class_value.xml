@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-    <jp>
+    <ja>
         <top_page>トップページ</top_page>
         <camera>カメラ</camera>
         <photo>写真</photo>
@@ -8,7 +8,9 @@
         <setting>設定</setting>
         <cmd_trans>タップで翻訳</cmd_trans>
         <menu>メニュー</menu>
-    </jp>
+        <to_lang>翻訳先</to_lang>
+        <from_lang>翻訳元</from_lang>
+    </ja>
     <en>
         <top_page>Top page</top_page>
         <camera>Camera</camera></camera>
@@ -17,6 +19,8 @@
         <setting>Setting</setting>
         <cmd_trans>Trans by tap</cmd_trans>
         <menu>Menu</menu>
+        <to_lang>Translation destination</to_lang>
+        <from_lang>Translation origin</from_lang>
     </en>
     
     

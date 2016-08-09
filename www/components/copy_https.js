@@ -82,33 +82,14 @@ function set_obj(json_obj){
      });
 }
 
-function https_trans() {
-         
-    var src = $("#picture").attr("src");
-
-    // URIからファイルを取得
-//    this.loadBinaryResource = function(src) {
-      var req = new XMLHttpRequest();
-      req.open('GET', src, false);
-      req.overrideMimeType('text/plain; charset=x-user-defined');
-      req.send(null);
-      if (req.status != 200) return '';
-      return req.responseText;
-//    }
-    
-    var src = $("#picture").attr("src");
-    alert("src: " + src + $(".h_from").text());
-    //POSTメソッドで送るデータを定義します var data = {パラメータ名 : 値};
-    var data = {
-        img     : b64,
-        from    : $(".h_from").text(),
-        to      : $(".h_to").text()
-        };
-    /*
+ function http_send_user_info(p_url,obj) {
     $(".kurukuru").css("display","block");
+    //console.log(p_url);
+    //console.log(JSON.stringify(obj));
+    // 通信実行
     $.ajax({
         type:"post",                // method = "POST"
-        url:"https://net-navi.cc/trans/index.php",                  // POST送信先のURL
+        url:p_url,                  // POST送信先のURL
         data:JSON.stringify(obj),   // JSONデータ本体
         //data:obj,   // JSONデータ本体
         contentType: 'application/json', // リクエストの Content-Type
@@ -125,18 +106,5 @@ function https_trans() {
         }
         
     });
-    */
 }
 
-//img をバイナリで取得
-/*
-function(src) {
-      var req = new XMLHttpRequest();
-      req.open('GET', src, false);
-      req.overrideMimeType('text/plain; charset=x-user-defined');
-      req.send(null);
-      if (req.status != 200) return '';
-      return req.responseText;
-}
-*/
-    
