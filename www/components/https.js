@@ -86,6 +86,7 @@ function https_trans() {
          
     var src = $("#picture").attr("src");
 
+alert(src);
     // URIからファイルを取得
 //    this.loadBinaryResource = function(src) {
       var req = new XMLHttpRequest();
