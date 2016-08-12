@@ -13,6 +13,7 @@ json <=> localstorage
 http://blog.asial.co.jp/939
 
 */
+
 //関数類
 
 function save_user(json_obj){
@@ -82,62 +83,44 @@ function set_obj(json_obj){
      });
 }
 
-function https_trans() {
-         
-    var src = $("#picture").attr("src");
-
-alert(src);
-    // URIからファイルを取得
-//    this.loadBinaryResource = function(src) {
-      var req = new XMLHttpRequest();
-      req.open('GET', src, false);
-      req.overrideMimeType('text/plain; charset=x-user-defined');
-      req.send(null);
-      if (req.status != 200) return '';
-      return req.responseText;
-//    }
-    
-    var src = $("#picture").attr("src");
-    alert("src: " + src + $(".h_from").text());
-    //POSTメソッドで送るデータを定義します var data = {パラメータ名 : 値};
-    var data = {
-        img     : b64,
-        from    : $(".h_from").text(),
-        to      : $(".h_to").text()
-        };
-    /*
-    $(".kurukuru").css("display","block");
-    $.ajax({
-        type:"post",                // method = "POST"
-        url:"https://net-navi.cc/trans/index.php",                  // POST送信先のURL
-        data:JSON.stringify(obj),   // JSONデータ本体
-        //data:obj,   // JSONデータ本体
-        contentType: 'application/json', // リクエストの Content-Type
-        dataType: "json",           // レスポンスをJSONとしてパースする
-        success: function(json_obj) {   // 200 OK時
-            set_obj(json_obj);
-            class_text();
-        },
-        error: function() {         // HTTPエラー時
-            alert("Server Error. Pleasy try again later.");
-        },
-        complete: function() {      // 成功・失敗に関わらず通信が終了した際の処理
-            $(".kurukuru").css("display","none");
-        }
+function https_trans_camera(imgUri) {
+    console.log('https mgUri :'+imgUri);
+        var errorHandler = function(e){
+            alert("error");
+            console.debug(e);    
+        };            
         
-    });
-    */
+        //console.log('https step01');
+        //window.resolveLocalFileSystemURL(imgUri, successCallback, errorCallback);
+        window.resolveLocalFileSystemURL(imgUri, 
+        function success(fileEntry) {
+            console.log('https_trans success'+ fileEntry.fullPath);
+            
+            var filename = fileEntry.name;
+    
+            fileEntry.file(function(file) {
+              var reader = new FileReader();
+              reader.onloadend = function(evt) {
+                //readAsArrayBufferは非同期なので、ロード完了後のイベントで行う。
+                console.log("Read complete!");
+                //console.log('base64 :'+evt.target.result);
+                
+                var img_base64 = evt.target.result.replace("data:image/jpeg;base64,","");
+                //console.log('base64 :'+ img_base64);
+                //ajax通信
+                
+              };
+              //reader.readAsArrayBuffer(file);
+              reader.readAsDataURL(file);
+            }, function() {console.log(error);});
+        }, 
+        function() {
+            console.log('https error:'+error);
+        });
 }
 
-//img をバイナリで取得
-/*
-function(src) {
-      var req = new XMLHttpRequest();
-      req.open('GET', src, false);
-      req.overrideMimeType('text/plain; charset=x-user-defined');
-      req.send(null);
-      if (req.status != 200) return '';
-      return req.responseText;
+
+function https_trans(img_base64) {
+    
 }
-*/
     
