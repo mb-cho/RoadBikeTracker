@@ -7,6 +7,19 @@ var l_from = 'en';//ここで言語を設定する
 var l_to = 'ja';//ここで言語を設定する
 
 
+var p_url = 'https://net-navi.cc/trans/index.php'; //Server
+
+// アプリ終了
+function Exit(){
+    navigator.notification.confirm($('.exit').text() + '?',ExitConfirm,' ', ['Resume','Exit'] );
+}
+function ExitConfirm(buttonIndex) {
+    if(buttonIndex == 2){
+        navigator.app.exitApp();
+    }
+}
+
+
 //default_lang から l_to , l_from   を get する
 function get_to_from(){
      // 初期値をlocalStorageに保存（初回ロード時のみ）

@@ -3,6 +3,12 @@ $(document).on('pageinit','#photo-page',function(){
     
     var base64_data = ''; //https に引き渡す 画像 base64
     
+    var options = { 
+        quality: 50,
+        destinationType: Camera.DestinationType.DATA_URL,
+        sourceType: navigator.camera.PictureSourceType.SAVEDPHOTOALBUM };
+          
+    
     document.addEventListener("deviceready", onDeviceReady, false);
     
     $('.cmd_trans').css('display', 'none');
@@ -24,7 +30,8 @@ $(document).on('pageinit','#photo-page',function(){
         image.style.display = 'block';
         image.src = "data:image/jpeg;base64," + imageData;
         base64_data = imageData;
-        console.log ('BASE64:'+imageData);
+        //console.log ('BASE64:'+imageData);
+        $('.cmd_trans').css('display', 'block');
     
     }
     
@@ -35,9 +42,7 @@ $(document).on('pageinit','#photo-page',function(){
           { quality: 50,destinationType: Camera.DestinationType.FILE_URI,
           sourceType: navigator.camera.PictureSourceType.SAVEDPHOTOALBUM });
         */
-        navigator.camera.getPicture(onSuccess, onFail, 
-          { quality: 50,destinationType: Camera.DestinationType.DATA_URL,
-          sourceType: navigator.camera.PictureSourceType.SAVEDPHOTOALBUM });
+        navigator.camera.getPicture(onSuccess, onFail, options);
     }
     
     function onFail (message) {
@@ -46,7 +51,7 @@ $(document).on('pageinit','#photo-page',function(){
     
     $('.cmd_trans').click(function(){
         console.log('click STEP01');
-        https_trans(image_uri);
+        https_trans(base64_data);
         console.log('click STEP02');
     });
     

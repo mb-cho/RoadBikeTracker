@@ -102,13 +102,11 @@ function https_trans_camera(imgUri) {
               var reader = new FileReader();
               reader.onloadend = function(evt) {
                 //readAsArrayBufferは非同期なので、ロード完了後のイベントで行う。
-                console.log("Read complete!");
+                console.log("Read complete! Camera");
                 //console.log('base64 :'+evt.target.result);
                 
-                var img_base64 = evt.target.result.replace("data:image/jpeg;base64,","");
-                //console.log('base64 :'+ img_base64);
-                //ajax通信
-                
+                //Server通信
+                https_trans(evt.target.result.replace("data:image/jpeg;base64,",""));
               };
               //reader.readAsArrayBuffer(file);
               reader.readAsDataURL(file);
@@ -120,7 +118,39 @@ function https_trans_camera(imgUri) {
 }
 
 
-function https_trans(img_base64) {
+function https_trans(base64_data) {
     
+    $(".kurukuru").css("display","block");
+
+    //POSTメソッドで送るデータを定義します var data = {パラメータ名 : 値};
+    var data = {
+            request : base64_data,
+            from:l_from,
+            to:l_to};
+    $.ajax({   
+        url: p_url,
+        timeout: 10000,
+        scriptCharset: 'utf-8',
+        method: 'POST',
+        data:data,
+        success: function(ret) {
+            //console.log(ret);
+            $(".kurukuru").css("display","none");
+            navigator.notification.alert(
+            ret,  // message
+            alertDismissed,         // callback
+            'trans',            // title
+            'OK'                  // buttonName
+            );
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            $(".kurukuru").css("display","none");
+            alert('Server Error');
+        }
+     });
+
 }
-    
+
+function alertDismissed(){
+    // nothing
+}

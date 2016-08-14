@@ -8,6 +8,7 @@
         <setting>設定</setting>
         <cmd_trans>タップで翻訳</cmd_trans>
         <menu>メニュー</menu>
+        <exit>終了</exit>
         <to_lang>翻訳先</to_lang>
         <from_lang>翻訳元</from_lang>
     </ja>
@@ -17,6 +18,7 @@
         <photo>Photo</photo>
         <result>Result</result>
         <setting>Setting</setting>
+        <exit>Exit</exit>
         <cmd_trans>Trans by tap</cmd_trans>
         <menu>Menu</menu>
         <to_lang>Translation destination</to_lang>

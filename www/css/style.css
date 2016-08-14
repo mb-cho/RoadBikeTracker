@@ -1,1 +1,12 @@
 /**/
+.kurukuru{
+    display:none;
+    margin:0 auto;
+    margin-bottom: -102px;
+    color:#ffffff;
+}
+
+/* 不使用  */
+.server_trans{
+    display:none;
+}

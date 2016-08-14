@@ -1,3 +1,9 @@
+
+<!--
+http://fortawesome.github.io/Font-Awesome/examples/
+から icon を持ってくる
+ここでは現在 fa-home , fa-gear , fa-camera を使っている
+-->
 <ons-page ng-controller="menu_controller" style="background-color: white">
 
     <ons-list>
@@ -36,6 +42,15 @@
             <i class="fa fa-gear fa-lg" style="color: #666"></i>
             &nbsp;<span class="setting">Setting</span>
         </ons-list-item>
+        
+        <ons-list-item
+            modifier="tappable" class="list__item__line-height"
+            onclick="Exit();">
+            <i class="fa fa-times fa-lg" style="color: #666"></i>
+            &nbsp;<span class="exit">exit</span>
+
+        </ons-list-item>
+        
     </ons-list>
 
 </ons-page>
