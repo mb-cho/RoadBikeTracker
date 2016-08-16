@@ -8,4 +8,21 @@
         <value>en</value>
         <text>English</text>
     </item>
+    
+    <item>
+        <value>zh-CN</value>
+        <text>簡体字</text>
+    </item>
+    
+    <item>
+        <value>zh-TW</value>
+        <text>繁体字</text>
+    </item>
+    
+    <item>
+        <value>ko</value>
+        <text>한국어</text>
+    </item>
+    
+    
 </root>

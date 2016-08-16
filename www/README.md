@@ -1,4 +1,12 @@
+#基本機能の開発は完了したが、google 翻訳に機能面で追いつかないので、開発を停止
+#今後、他のアプリのひな型に使用する
+# 2016-08-16 10:08:00
+#**************************************************************
+
+
+
 # Getting Started to Onsen UI Sliding Menu
+
 
 This template is using Onsen UI, a HTML5 framework that is focusing on the speed and ease of use.
 For details, please check out [Onsen UI Website](http://onsenui.io) and [its documents](http://onsenui.io/guide/overview.html).

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
     <ja>
-        <top_page>トップページ</top_page>
+        <top_page>画像翻訳</top_page>
         <camera>カメラ</camera>
         <photo>写真</photo>
         <result>結果</result>
@@ -13,7 +13,7 @@
         <from_lang>翻訳元</from_lang>
     </ja>
     <en>
-        <top_page>Top page</top_page>
+        <top_page>Translate by image</top_page>
         <camera>Camera</camera></camera>
         <photo>Photo</photo>
         <result>Result</result>
