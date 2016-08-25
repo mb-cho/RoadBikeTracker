@@ -1,0 +1,25 @@
+
+<ons-navigator>
+    <ons-page 
+        ng-controller="timer__controller" 
+        style="background-color: white"
+        id="timer-page">
+
+    <ons-toolbar>
+        <div class="left">
+            <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars"></ons-icon></ons-toolbar-button>
+        </div>
+        <div class="center"><span class="timer">Timer</span></div>
+    </ons-toolbar>
+    
+    
+    <h3>タイマー</h3>
+    <hr>
+    <form name="ktimer">
+    <input type="text" id="counter" size="10">
+    <input type="button" name="b_start" size="10" value="Start" onClick="timer_count_start()">
+    </form>
+
+        </ons-list>
+    </ons-page>
+</ons-navigator>

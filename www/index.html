@@ -13,14 +13,22 @@
     
     <script src="components/https.js"></script>
     
-    <script src="components/aoki_trans.js"></script>
+    <script src="components/aoki.js"></script>
+    <script src="components/map_page.js"></script>
+    <script src="components/compass_page.js"></script>
+<!--
     <script src="components/camera_page.js"></script>
     <script src="components/photo_page.js"></script>
     <script src="components/result_page.js"></script>
     <script src="components/setting_page.js"></script>
-    
-    
-    
+-->
+<!--
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAhZvWDQ_4Sc9_yi8JwTWuy_3SPSnuSxsQ&sensor=false"></script>
+
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAP5YY5yyaCNeRwwx-a1aHjkFIm80NJYSU&sensor=false"></script>
+-->    
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+
     <link rel="stylesheet" href="components/loader.css">
     
     <link rel="stylesheet" href="css/camera.css">
@@ -35,6 +43,20 @@
     var module = ons.bootstrap('my-app', ['onsen']); 
     
     module.controller('menu_controller', function($scope) {
+        ons.ready(function() {
+            class_text();
+            f_switch_compass_view();
+            f_switch_tracking_view();
+        });
+    });
+    
+    module.controller('map__controller', function($scope) {
+        ons.ready(function() {
+            class_text();
+        });
+    });
+    
+    module.controller('compass__controller', function($scope) {
         ons.ready(function() {
             class_text();
         });
@@ -53,7 +75,7 @@
     });
     
     
-    module.controller('result__controller', function($scope) {
+    module.controller('timer__controller', function($scope) {
         ons.ready(function() {
             class_text();
         });
@@ -65,16 +87,16 @@
         });
     });
     
-    module.controller('top__controller', function($scope) {
-        ons.ready(function() {
-            class_text();
-        });
-    });
-    
     </script>
 </head>
 <body>
-    <ons-sliding-menu var="app.slidingMenu" menu-page="menu.html" main-page="top.html" side="left" type="overlay" max-slide-distance="200px">
+    <ons-sliding-menu var="app.slidingMenu" 
+        menu-page="menu.html" 
+        main-page="map.html" 
+        side="left" type="overlay" 
+        max-slide-distance="200px"
+        swipeable="false"
+        id="id_slidingMenu">
     </ons-sliding-menu>
 </body>
 </html>

@@ -1,7 +1,7 @@
 
 ////////////////////////  setting-page ///////////////////////////////////////////
 $(document).on('pageinit','#setting-page',function(){
-    set_from_to_lang();
+    $("#id_slidingMenu").attr({swipeable: "true"});
     $('#to_lang').change(function(){
         l_to = $(this).val();
         set_to_from();

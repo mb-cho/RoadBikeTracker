@@ -10,11 +10,27 @@ http://fortawesome.github.io/Font-Awesome/examples/
 
         <ons-list-item
             modifier="tappable" class="list__item__line-height"
-            onclick="app.slidingMenu.setMainPage('top.html', {closeMenu: true})">
-            <i class="fa fa-home fa-lg" style="color: #666"></i>
-            &nbsp;<span class="top_page">Top Page</span>
+            onclick="app.slidingMenu.setMainPage('map.html', {closeMenu: true})">
+            <i class="fa " style="color: #666"></i>
+            &nbsp;<span class="map_page">show map</span>
         </ons-list-item>
 
+        <ons-list-item
+            modifier="tappable" class="list__item__line-height"
+            onclick="changeTracking();">
+            <i class="fa" style="color: #666"></i>
+            &nbsp;<span class="tracking">Tracking</span>
+            &nbsp;<span id="tracking_switch">:OFF</span>
+        </ons-list-item>
+        
+        <ons-list-item
+            modifier="tappable" class="list__item__line-height"
+            onclick="changeWatchCompass();">
+            <i class="fa" style="color: #666"></i>
+            &nbsp;<span class="compass">Compass</span>
+            &nbsp;<span id="compass_switch">:OFF</span>
+        </ons-list-item>
+        
         <ons-list-item
             modifier="tappable" class="list__item__line-height"
             onclick="app.slidingMenu.setMainPage('camera.html', {closeMenu: true})">
@@ -31,9 +47,9 @@ http://fortawesome.github.io/Font-Awesome/examples/
         
         <ons-list-item
             modifier="tappable" class="list__item__line-height"
-            onclick="app.slidingMenu.setMainPage('result.html', {closeMenu: true})">
-            <i class="fa fa-file fa-lg" style="color: #666"></i>
-            &nbsp;<span class="result">Result</span>
+            onclick="app.slidingMenu.setMainPage('timer.html', {closeMenu: true})">
+            <i class="fa" style="color: #666"></i>
+            &nbsp;<span class="timer">Timer</span>
         </ons-list-item>
         
         <ons-list-item

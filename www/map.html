@@ -1,0 +1,35 @@
+
+    
+<ons-navigator>
+
+    <ons-modal var="myModal">
+    位置情報を取得中…
+    </ons-modal>
+
+    <ons-page ng-controller="map__controller" id="map-page">
+
+        <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars"></ons-icon></ons-toolbar-button>
+            </div>
+            <div class="center">
+                <span class="menu">Menu</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="app_title">Road Bike</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="heading">Heading:</span>
+                <span id="heading_val"></span>
+            </div>
+
+        </ons-toolbar>
+        
+        <div id="map"></div>
+    <!--    
+        <ons-bottom-toolbar style="text-align: right;">
+            <ons-toolbar-button class="put-marker">
+                <ons-icon icon="fa-map-marker" size="20px"></ons-icon> 現在地をマークする
+            </ons-toolbar-button>
+        </ons-bottom-toolbar>
+    -->
+    </ons-page>
+</ons-navigator>

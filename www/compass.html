@@ -1,0 +1,27 @@
+<ons-navigator>
+    
+    <ons-page ng-controller="compass__controller" 
+        style="background-color: white"
+        id="compass-page">
+        
+    <ons-toolbar>
+        <div class="left">
+            <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()">
+            <ons-icon icon="bars"></ons-icon></ons-toolbar-button>
+            <ons-button id ="cmd_heading" class="cmd_compass">Show heading</ons-button>
+        </div>       
+        <div class="center">
+            <span class="compass">Compass</span>
+            <p id="heading"></p>
+        </div>
+
+    </ons-toolbar>
+    
+    <div class="img_size">
+        <img id="picture" src="">
+    </div>
+
+
+    
+    </ons-page>
+</ons-navigator>]
