@@ -14,6 +14,7 @@ var b_tracking = false; //GPS trackingする:true
 var watchID = null;     //compass で使用する
 var trackingId  = null; //TRACKING で使用する
 var marker = null;      //mapに表示する marker
+
 // アプリ終了
 function Exit(){
     navigator.notification.confirm($('.exit').text() + '?',ExitConfirm,' ', ['Resume','Exit'] );
