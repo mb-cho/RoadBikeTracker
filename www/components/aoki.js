@@ -261,8 +261,27 @@ function startTracking() {
         onSuccessTracking, 
         onErrorTracking, 
         options); 
+        
+        
+        /////////////////////////////////////////
+        var Fetcher = window.BackgroundFetch;
+
+        // 関数を登録
+        Fetcher.configure(fetchCallback, failureCallback, {
+            stopOnTerminate: false
+        });
+        ///////////////////////////////////////////
+
+
 }
 
+fetchCallback = function() {
+  console.log('Back Graund');
+}
+failureCallback = function() {
+    console.log('back Graoud Error');
+};
+    
 // Stop  tracking
 function stopTracking() {
     console.log('Enter stopTracking');
@@ -294,7 +313,7 @@ function onSuccessTracking(p) {
     //測定データをコンソールに表示
     console.log("緯度:" + p.coords.latitude +
                 ",経度:" + p.coords.longitude +
-                ",誤差:" + acc);
+                ",誤差:" + acc + ":" + timNow.toLocaleString());
     
     //var latlng = new google.maps.LatLng(p.coords.latitude, p.coords.longitude);   
     var myLatLng = {lat: p.coords.latitude, lng: p.coords.longitude};
